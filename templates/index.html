@@ -1,0 +1,28 @@
+<html>
+{% include "partials/header.html" %}
+<body>
+  <div class="child">
+
+    <div>
+        <a class="logo" href="/">{{ config.site_name }}</a>
+    </div>
+
+    {% include "state/initial.html" %}
+
+    {% include "state/after.html" %}
+
+    <br /><br />
+    <div class="promo_parent">
+
+    {% for promo in promo_list %}
+        {% with promo=promo %}
+            {% include "promo.html" %}
+        {% endwith %}
+    {% endfor %}
+
+    </div>
+  </div>
+  {% include "partials/footer.html" %}
+<script src="static/js/bundle.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
