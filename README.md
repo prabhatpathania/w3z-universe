@@ -26,3 +26,8 @@ python route.py
     certain URLs, see `config.json`
 - Google analytics integration
     - Integrate main events with GA just by adding one line to `config.json`
+
+# sites powered by this codebase
+
+- https://w3z.in
+- https://f3w.in
