@@ -17,7 +17,7 @@ def not_found(error):
 
 @app.route('/')
 def index():
-    promo_list = ads.get_promos()
+    promo_list = ads.get_promos(config)
     return render_template('index.html', promo_list=promo_list, config=config)
 
 
