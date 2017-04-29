@@ -15,6 +15,18 @@
             "url": "https://www.digitalocean.com/?refcode=efabde48fb30",
             "description": "Host your application on SSD servers"
         }
+    ],
+    "affiliates": [
+        {
+            "name": "Flipkart",
+            "urls": ["flipkart.com"],
+            "tag": "affid=divyenduzg"
+        },
+        {
+            "name": "Amazon",
+            "urls": ["amazon.in", "amazon.com"],
+            "tag": "tag=divyendusingh-21"
+        }
     ]
   },
   "prod" : {
@@ -31,6 +43,18 @@
             "title": "DigitalOcean.com",
             "url": "https://www.digitalocean.com/?refcode=efabde48fb30",
             "description": "Host your application on SSD servers"
+        }
+    ],
+    "affiliates": [
+        {
+            "name": "Flipkart",
+            "urls": ["flipkart.com"],
+            "tag": "affid=divyenduzg"
+        },
+        {
+            "name": "Amazon",
+            "urls": ["amazon.in", "amazon.com"],
+            "tag": "tag=divyendusingh-21"
         }
     ]
   }
