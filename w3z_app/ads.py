@@ -1,9 +1,6 @@
 class Ads:
-    def get_promos(self):
-        # Example
-        # {
-        #    'title': 'DigitalOcean.com',
-        #    'url': "https://www.digitalocean.com/?refcode=efabde48fb30",
-        #    'description': "Host your application on SSD servers",
-        # }
-        return []
+    def get_promos(self, config):
+        if 'ads' in config and isinstance(config['ads'], list):
+            return config['ads']
+        else:
+            return []
