@@ -4,6 +4,7 @@ all codebase related to w3z including site, chrome extension, cli
 # setup
 
 Copy config.sample.json to config.json and change parameters as required.
+Environment can be "dev" or "prod"
 
 Then, run the following :-
 

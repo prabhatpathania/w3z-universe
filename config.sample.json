@@ -1,32 +1,5 @@
 {
-  "env": "dev",
-  "dev" : {
-    "site_name": "w3z local",
-    "api_endpoint": "http://localhost:5000",
-    "gzip": false,
-    "minify": false,
-    "GA": "GA ID",
-    "favicon": "https://s3-ap-southeast-1.amazonaws.com/static.w3z.in/assets/w3z.png",
-    "ads": [
-        {
-            "title": "DigitalOcean.com",
-            "url": "https://www.digitalocean.com/?refcode=efabde48fb30",
-            "description": "Host your application on SSD servers"
-        }
-    ],
-    "affiliates": [
-        {
-            "name": "Flipkart",
-            "urls": ["flipkart.com"],
-            "tag": "affid=divyenduzg"
-        },
-        {
-            "name": "Amazon",
-            "urls": ["amazon.in", "amazon.com"],
-            "tag": "tag=divyendusingh-21"
-        }
-    ]
-  },
+  "env": "prod",
   "prod" : {
     "site_name": "w3z local",
     "api_endpoint": "API_ENDPOINT",
