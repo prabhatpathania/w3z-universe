@@ -35,7 +35,7 @@ def work(query=None):
         query = request.get_json()
     url = query['protocol'] + query['url']
 
-    url = affiliate.attach_affiliates(url)
+    url = affiliate.attach_affiliates(config, url)
 
     u = db.get_link(url, True)
     if u is not None:

@@ -1,17 +1,9 @@
 class Affiliate:
-    def attach_affiliates(self, url=None):
-        affiliate_data = [
-            {
-                'name': 'Flipkart',
-                'urls': ['flipkart.com'],
-                'tag': 'affid=divyenduzg'
-            },
-            {
-                'name': 'Amazon',
-                'urls': ['amazon.in', 'amazon.com'],
-                'tag': 'tag=divyendusingh-21'
-            }
-        ]
+    def attach_affiliates(self, config, url = None):
+        if 'affiliates' in config and isinstance(config['affiliates'], list):
+            affiliate_data = config['affiliates']
+        else:
+            affiliate_data = []
 
         for item in affiliate_data:
             url = self._apply_affiliate_token(item['urls'], item['tag'], url)

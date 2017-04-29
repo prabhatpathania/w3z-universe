@@ -8,7 +8,26 @@
     "sendgrid_api_key": "SENDGRID_API_KEY",
     "email_for_db_backup": "EMAIL",
     "GA": "GA ID",
-    "favicon": "https://s3-ap-southeast-1.amazonaws.com/static.w3z.in/assets/w3z.png"
+    "favicon": "https://s3-ap-southeast-1.amazonaws.com/static.w3z.in/assets/w3z.png",
+    "ads": [
+        {
+            "title": "DigitalOcean.com",
+            "url": "https://www.digitalocean.com/?refcode=efabde48fb30",
+            "description": "Host your application on SSD servers"
+        }
+    ],
+    "affiliates": [
+        {
+            "name": "Flipkart",
+            "urls": ["flipkart.com"],
+            "tag": "affid=divyenduzg"
+        },
+        {
+            "name": "Amazon",
+            "urls": ["amazon.in", "amazon.com"],
+            "tag": "tag=divyendusingh-21"
+        }
+    ]
   },
   "prod" : {
     "site_name": "w3z local",
@@ -18,6 +37,25 @@
     "sendgrid_api_key": "SENDGRID_API_KEY",
     "email_for_db_backup": "EMAIL",
     "GA": "GA ID",
-    "favicon": "https://s3-ap-southeast-1.amazonaws.com/static.w3z.in/assets/w3z.png"
+    "favicon": "https://s3-ap-southeast-1.amazonaws.com/static.w3z.in/assets/w3z.png",
+    "ads": [
+        {
+            "title": "DigitalOcean.com",
+            "url": "https://www.digitalocean.com/?refcode=efabde48fb30",
+            "description": "Host your application on SSD servers"
+        }
+    ],
+    "affiliates": [
+        {
+            "name": "Flipkart",
+            "urls": ["flipkart.com"],
+            "tag": "affid=divyenduzg"
+        },
+        {
+            "name": "Amazon",
+            "urls": ["amazon.in", "amazon.com"],
+            "tag": "tag=divyendusingh-21"
+        }
+    ]
   }
 }
