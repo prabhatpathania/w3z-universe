@@ -15,3 +15,14 @@ yarn
 webpack
 python route.py
 ```
+
+# features
+
+- Custom ads
+    - Show custom ads on homepage that have a title, link and desctiption. See
+    `config.json`
+- Custom affiliates
+    - You can provide affiliate configuration to auto attach affiliate id with
+    certain URLs, see `config.json`
+- Google analytics integration
+    - Integrate main events with GA just by adding one line to `config.json`
