@@ -1,11 +1,5 @@
 import Axios from 'axios';
 
-var config = require('../config.json');
-config = config[config.env];
-
-var API_ENDPOINT = config.api_endpoint;
-console.log('API_ENDPOINT', API_ENDPOINT);
-
 var parseUrl = (function () {
   var a = document.createElement('a');
   return function (url) {
@@ -26,8 +20,7 @@ var Service = {
   processLink: function(link){
     link = parseUrl(link);
 
-    return Axios.post(
-      API_ENDPOINT + "/work",
+    return Axios.post("/work",
       {
         protocol: link.protocol + '//',
         url: link.host + link.pathname + link.search + link.hash

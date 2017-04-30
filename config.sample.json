@@ -3,8 +3,6 @@
   "prod" : {
     "site_name": "w3z local",
     "api_endpoint": "API_ENDPOINT",
-    "gzip": false,
-    "minify": false,
     "google_analytics": "GA ID",
     "favicon": "https://s3-ap-southeast-1.amazonaws.com/static.w3z.in/assets/w3z.png",
     "ads": [
