@@ -39,7 +39,7 @@ def work(query=None):
 
     u = db.get_link(url, True)
     if u is not None:
-        return json.dumps({'u': config['api_endpoint'] + '/' + u})
+        return json.dumps({'u': config['site_url'] + '/' + u})
     else:
         u_hash = core.get_hash(url)
         u = db.get_link(u_hash)
@@ -48,7 +48,7 @@ def work(query=None):
             u_hash = core.get_hash(url)
             u = db.get_link(u_hash)
         db.set_link(url, u_hash)
-        return json.dumps({'u': config['api_endpoint'] + '/' + u_hash})
+        return json.dumps({'u': config['site_url'] + '/' + u_hash})
 
 
 @app.route('/privacy', methods=['GET'])

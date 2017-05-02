@@ -1,27 +1,27 @@
 {
-  "env": "prod",
+  "env": "<Environment (dev|prod)>",
   "prod" : {
-    "site_name": "w3z local",
-    "api_endpoint": "API_ENDPOINT",
-    "google_analytics": "GA ID",
-    "favicon": "https://s3-ap-southeast-1.amazonaws.com/static.w3z.in/assets/w3z.png",
+    "site_name": "<Site name>",
+    "seo": {
+        "title": "<Site SEO title>",
+        "description": "<Site SEO description>",
+        "keywords": "<Site SEO keywords comma separated>"
+    },
+    "site_url": "<Site URL>",
+    "google_analytics": "<Google analytics ID>",
+    "favicon": "<Favicon URL>",
     "ads": [
         {
-            "title": "DigitalOcean.com",
-            "url": "https://www.digitalocean.com/?refcode=efabde48fb30",
-            "description": "Host your application on SSD servers"
+            "title": "<Ad title>",
+            "url": "<Ad URL>",
+            "description": "<Ad description>"
         }
     ],
     "affiliates": [
         {
-            "name": "Flipkart",
-            "urls": ["flipkart.com"],
-            "tag": "affid=divyenduzg"
-        },
-        {
-            "name": "Amazon",
-            "urls": ["amazon.in", "amazon.com"],
-            "tag": "tag=divyendusingh-21"
+            "name": "<Affiliate name>",
+            "urls": ["<Affiliate URL 1> e.g. amazon.in", "<Affiliate URL 2> e.g. amazon.com"],
+            "tag": "<Affiliate GET Tag e.g. tag=divyendusingh-21>"
         }
     ]
   }
