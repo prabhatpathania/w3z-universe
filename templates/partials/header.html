@@ -5,9 +5,21 @@
     <meta http-equiv="refresh" content="0;URL={{link}}">
     {% endif %}
 
-    <title>
-        w3z | shorten url
-    </title>
+    {% if 'seo' in config and 'title' in config.seo %}
+    <title>{{ config.seo.title }}</title>
+    {% elif 'site_name' in config %}
+    <title>{{ config.site_name }} | shorten url</title>
+    {% else %}
+    <title>Shorten url</title>
+    {% endif %}
+
+    {% if 'seo' in config and 'description' in config.seo %}
+    <meta name="description" content="{{ config.seo.description }}">
+    {% endif %}
+
+    {% if 'seo' in config and 'keywords' in config.seo %}
+    <meta name="keywords" content="{{ config.seo.keywords }}">
+    {% endif %}
 
     {% if 'favicon' in config %}
     <link rel="shortcut icon" type="image/png" href="{{ config.favicon }}"/>
