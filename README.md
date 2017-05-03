@@ -13,6 +13,17 @@ sudo apt-get install python python-virtualenv python-pip nodejs-legacy npm
 sudo npm install -g yarn webpack
 ```
 
+Setup DB table via (use DB name w3z.db) :-
+
+```
+sqlite3 w3z.db
+
+CREATE TABLE "links" (
+  "url" varchar(6000) NOT NULL PRIMARY KEY,
+  "convertedurl" varchar(90) NOT NULL UNIQUE
+);
+```
+
 Then, run the following :-
 
 ```
