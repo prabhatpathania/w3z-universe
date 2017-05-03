@@ -6,6 +6,13 @@ all codebase related to w3z including site, chrome extension, cli
 Copy config.sample.json to config.json and change parameters as required.
 Environment can be "dev" or "prod"
 
+Install the required system dependencies, these instructions are for ubuntu / debian :-
+
+```
+sudo apt-get install python python-virtualenv python-pip nodejs-legacy npm
+sudo npm install -g yarn webpack
+```
+
 Then, run the following :-
 
 ```
