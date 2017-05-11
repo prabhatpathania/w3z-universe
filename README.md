@@ -10,7 +10,8 @@ Install the required system dependencies, these instructions are for ubuntu / de
 
 ```
 sudo apt-get install python python3 python-virtualenv python-pip python3-pip nodejs-legacy npm
-sudo npm install -g yarn webpack
+npm install -g yarn
+export PATH="./node_modules/.bin:$PATH"
 ```
 
 Setup DB table via (use DB name w3z.db) :-
@@ -30,7 +31,7 @@ Then, run the following :-
 virtualenv v -p python3
 source v/bin/activate
 pip install -r requirements
-yarn
+yarn or npm install
 webpack
 python route.py
 ```
