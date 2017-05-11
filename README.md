@@ -9,7 +9,7 @@ Environment can be "dev" or "prod"
 Install the required system dependencies, these instructions are for ubuntu / debian :-
 
 ```
-sudo apt-get install python python-virtualenv python-pip nodejs-legacy npm
+sudo apt-get install python python3 python-virtualenv python-pip python3-pip nodejs-legacy npm
 sudo npm install -g yarn webpack
 ```
 
@@ -27,7 +27,7 @@ CREATE TABLE "links" (
 Then, run the following :-
 
 ```
-virtualenv v
+virtualenv v -p python3
 source v/bin/activate
 pip install -r requirements
 yarn
