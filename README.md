@@ -4,7 +4,7 @@ all codebase related to w3z including site, chrome extension, cli
 # setup
 
 Copy config.sample.json to config.json and change parameters as required.
-Environment can be "dev" or "prod", also, accordingly maintain key name "prod" as dev/prod in config.json.
+In config.json, environment can be maintained as "dev" or "prod", also, accordingly maintain key name "prod"(already maintained in file) as "dev" or "prod" as per the environment defined.
 
 Install the required system dependencies, these instructions are for ubuntu / debian :-
 
@@ -30,7 +30,7 @@ Then, run the following :-
 ```
 virtualenv v -p python3
 source v/bin/activate
-pip install -r requirements
+pip install -r requirements.txt
 yarn or npm install
 webpack
 python route.py
