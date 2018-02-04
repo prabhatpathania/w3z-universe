@@ -30,7 +30,7 @@ Then, run the following :-
 ```
 virtualenv v -p python3
 source v/bin/activate
-pip install -r requirements
+pip install -r requirements.txt
 yarn or npm install
 webpack
 python route.py
