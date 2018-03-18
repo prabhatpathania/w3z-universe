@@ -33,22 +33,37 @@ def slack():
 def work(query=None):
     if query is None:
         query = request.get_json()
+    print(query)
     url = query['protocol'] + query['url']
-
-    url = affiliate.attach_affiliates(config, url)
-
-    u = db.get_link(url, True)
-    if u is not None:
-        return json.dumps({'u': config['site_url'] + '/' + u})
-    else:
-        u_hash = core.get_hash(url)
-        u = db.get_link(u_hash)
-        while u is not None:
-            core.magic += 1
+    reqhandle = query['reqhandle']
+    
+    if reqhandle is not '' and reqhandle is not None:                             #Private link requested
+        u = db.get_link(reqhandle, True)
+        if u is None:
+            u = db.set_link(url, reqhandle, True)
+            if  u:
+                print(json.dumps({'u': config['site_url'] + '/' + reqhandle}))
+                return json.dumps({'u': config['site_url'] + '/' + reqhandle})
+            else:
+                return json.dumps({'u': ''})
+        else:
+            return json.dumps({'u': ''})
+    else:        
+        url = affiliate.attach_affiliates(config, url)
+        u = db.get_link(url, True)
+        if u is not None:
+            return json.dumps({'u': config['site_url'] + '/' + u})
+        else:
             u_hash = core.get_hash(url)
-            u = db.get_link(u_hash)
-        db.set_link(url, u_hash)
-        return json.dumps({'u': config['site_url'] + '/' + u_hash})
+            u = db.get_link(u_hash, False)
+            while u is not None:
+                core.magic += 1
+                u_hash = core.get_hash(url)
+                u = db.get_link(u_hash, False)
+                if u is None:
+                    u = db.get_link(u_hash, True)       # check if generated link is not in privatelinks table
+            db.set_link(url, u_hash, None)
+            return json.dumps({'u': config['site_url'] + '/' + u_hash})
 
 
 @app.route('/privacy', methods=['GET'])
@@ -59,7 +74,7 @@ def privacy():
 @app.route('/<slug>', methods=['GET'])
 def open_link(slug=None):
     domains = ['amazon.in', 'amazon.com', 'flipkart.com', 'google.com']
-    link = db.get_link(slug)
+    link = db.get_link(slug, None)
     if link is not None:
         print(link)
         if any(one_domain in link for one_domain in domains) or 'http://' in link:

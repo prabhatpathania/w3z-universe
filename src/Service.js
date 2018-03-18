@@ -17,13 +17,14 @@ var parseUrl = (function () {
 })();
 
 var Service = {
-  processLink: function(link){
+  processLink: function(link, reqhandle){
     link = parseUrl(link);
-
+    
     return Axios.post("/work",
       {
         protocol: link.protocol + '//',
-        url: link.host + link.pathname + link.search + link.hash
+        url: link.host + link.pathname + link.search + link.hash,
+        reqhandle: reqhandle
       })
       .then(function(response){
         return response.data
