@@ -49,7 +49,7 @@ var App = (function () {
         reqhandle = reqhandle.trim()
         spacecheck = !/\s/g.test(reqhandle);
         if (spacecheck) {
-          if (reqhandle.length <= 90) {
+          if (reqhandle.length <= 90 && reqhandle.length > 3) {
             Service.processLink(link, reqhandle)
               .then((data) => {
                 if (data.u !== '') {
@@ -65,7 +65,10 @@ var App = (function () {
                 }
               });
           }
-          else {
+          else if(reqhandle.length <= 3){
+            alert('URLs with 3 or less characters is a premium feature and not ready at the moment.');
+            ga('send', 'event', 'click', reqhandle, 'invalid')}
+          else  {
             alert('Requested handle too long');
             ga('send', 'event', 'click', reqhandle, 'invalid')
           }
