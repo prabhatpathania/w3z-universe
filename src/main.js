@@ -44,12 +44,11 @@ var App = (function () {
       // Finally checking if the link is valid or not
       if (isValidLink(link)) {
         linkInput.value = link;
-
         // Check req name is less than 90 chars
         reqhandle = reqhandle.trim()
         spacecheck = !/\s/g.test(reqhandle);
         if (spacecheck) {
-          if (reqhandle.length <= 90 && reqhandle.length > 3) {
+          if (reqhandle.length > 3 && reqhandle.length <= 90) {
             Service.processLink(link, reqhandle)
               .then((data) => {
                 if (data.u !== '') {
@@ -65,7 +64,7 @@ var App = (function () {
                 }
               });
           }
-          else if(reqhandle.length <= 3){
+          else if(reqhandle.length > 0 && reqhandle.length <= 3){
             alert('URLs with 3 or less characters is a premium feature and not ready at the moment.');
             ga('send', 'event', 'click', reqhandle, 'invalid')}
           else  {
