@@ -29,7 +29,7 @@ class DB:
     def get_link(self, slug, isprivate):
         if slug is None:
             return None
-
+        print(slug)
         conn = self._get_conn()
         cursor = conn.cursor()
         if isprivate is False:
@@ -46,19 +46,25 @@ class DB:
             return data[0] if data else None
         else:
             exporturl = None        # Initialize
+            print("fetch url")
             cursor.execute(
                 "Select LinkID from PrivateLinks where ConvertedUrl = ?", (slug,))
             data = cursor.fetchone()
+            print(data)
             if data is not None:
                 linkid = data[0]
+                print("got from private")
                 cursor.execute("Select url from LinkList where LinkID = ?", (linkid,))
                 linkdata = cursor.fetchone()
                 exporturl = linkdata[0]
             else:
                 cursor.execute(
                 "Select LinkID from PublicLinks where ConvertedUrl = ?", (slug,))
+                data = cursor.fetchone()
+                print(data)
                 if data is not None:
                     linkid = data[0]
+                    print("got from public")
                     cursor.execute("Select url from LinkList where LinkID = ?", (linkid,))
                     linkdata = cursor.fetchone()
                     exporturl = linkdata[0]
