@@ -48,13 +48,17 @@ var App = (function () {
         reqhandle = reqhandle.trim()
         spacecheck = !/\s/g.test(reqhandle);
         if (spacecheck) {
-          if (reqhandle.length > 3 && reqhandle.length <= 90) {
+          if (reqhandle.length > 0 && reqhandle.length <= 3) {
+            alert('URLs with 3 or less characters is a premium feature and not ready at the moment.');
+            ga('send', 'event', 'click', reqhandle, 'invalid')
+          }
+          else if (reqhandle.length <= 90) {
             Service.processLink(link, reqhandle)
               .then((data) => {
                 if (data.u !== '') {
                   initialDiv.style.display = 'none';
                   afterDiv.style.display = 'block';
-
+                  debugger;
                   shortURL.innerHTML = data.u;
                   shortURL.href = data.u;
                   ga('send', 'event', 'click', link, data.u)
@@ -64,10 +68,7 @@ var App = (function () {
                 }
               });
           }
-          else if(reqhandle.length > 0 && reqhandle.length <= 3){
-            alert('URLs with 3 or less characters is a premium feature and not ready at the moment.');
-            ga('send', 'event', 'click', reqhandle, 'invalid')}
-          else  {
+          else {
             alert('Requested handle too long');
             ga('send', 'event', 'click', reqhandle, 'invalid')
           }
