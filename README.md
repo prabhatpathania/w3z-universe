@@ -3,6 +3,8 @@ all codebase related to w3z including site, chrome extension, cli
 
 # setup
 
+Fork and clone the git project and open the directory in your terminal.
+
 Copy config.sample.json to config.json and change parameters as required.
 Environment can be "dev" or "prod"
 
@@ -13,7 +15,6 @@ sudo apt-get install python python3 python-virtualenv python-pip python3-pip nod
 npm install -g yarn
 export PATH="./node_modules/.bin:$PATH"
 ```
-
 Setup DB table via (use DB name w3z.db) :-
 
 ```
